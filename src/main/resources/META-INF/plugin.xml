@@ -1,0 +1,49 @@
+<idea-plugin>
+    <id>com.gemtechnologies.GemAndroidStudioDeveloperPlugin</id>
+    <name>Gem Developer Tools</name>
+    <vendor>Petushki Ltd.</vendor>
+
+    <description><![CDATA[
+            Android Studio plugin for Gem4me developer team which can help to
+            - Create new Module
+            - Generate Strings
+            - Generate Api
+            - Provide Class
+    ]]></description>
+
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <group text="GEM Tools"
+               description="GEM tools">
+            <add-to-group group-id="MainMenu" anchor="last"/>
+            <action class="com.gemtechnologies.actions.CreateNewModuleAction"
+                    text="Create New Module"
+                    description="Create new module"/>
+
+            <action class="com.gemtechnologies.actions.GenerateStringsAction"
+                    text="Generate Strings"
+                    description="Generate strings"/>
+
+            <action class="com.gemtechnologies.actions.GenerateApiAction"
+                    text="Generate Api"
+                    description="Generate api"/>
+
+            <action class="com.gemtechnologies.actions.ProvideClassAction"
+                    text="Provide Class"
+                    description="Provide class"/>
+        </group>
+    </actions>
+
+    <application-components>
+        <component>
+            <implementation-class>com.gemtechnologies.DeveloperPluginComponent</implementation-class>
+        </component>
+    </application-components>
+</idea-plugin>
